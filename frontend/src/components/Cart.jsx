@@ -36,7 +36,7 @@ const Cart = () => {
   }
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto', width: '100%' }}>
+    <div style={{ padding: '2rem', width: '100%' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <h2>Shopping Cart ({totalItems} items)</h2>
         <button
