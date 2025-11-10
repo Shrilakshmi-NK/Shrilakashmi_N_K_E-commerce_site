@@ -19,12 +19,12 @@ const Header = () => {
   return (
     <header style={{ 
       padding: '1rem 2rem', 
-      backgroundColor: '#333', 
+      backgroundColor: 'var(--dark-bg)', 
       color: 'white',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+      boxShadow: 'var(--shadow)'
     }}>
       <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
         <h1 style={{ fontSize: '1.8rem' }}>E-Commerce Store</h1>
@@ -46,29 +46,19 @@ const Header = () => {
             <span style={{ fontSize: '0.9rem' }}>Hi, {user.displayName}</span>
           </div>
           
-          <Link to="/cart" style={{ 
+          <Link to="/cart" className="btn-primary" style={{ 
             color: 'white', 
             textDecoration: 'none',
             padding: '0.5rem 1rem',
-            backgroundColor: '#007bff',
             borderRadius: '6px',
-            fontWeight: '500',
-            transition: 'background-color 0.2s'
+            fontWeight: '500'
           }}>
             Cart ({totalItems})
           </Link>
           
           <button
             onClick={handleLogout}
-            style={{
-              padding: '0.5rem 1rem',
-              backgroundColor: '#dc3545',
-              color: 'white',
-              border: 'none',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontWeight: '500'
-            }}
+            className="btn-danger"
           >
             Logout
           </button>

@@ -14,18 +14,10 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div style={{
-      border: '1px solid #ddd',
-      borderRadius: '8px',
+    <div className="card" style={{
       padding: '1rem',
-      backgroundColor: 'white',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-      transition: 'transform 0.2s',
       cursor: 'pointer'
-    }}
-    onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
-    onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
-    >
+    }}>
       <Link to={`/product/${product._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
         <img 
           src={product.images[0]} 
@@ -52,7 +44,7 @@ const ProductCard = ({ product }) => {
         <p style={{ 
           fontSize: '1.2rem', 
           fontWeight: 'bold', 
-          color: '#2c5aa0',
+          color: 'var(--primary-color)',
           margin: '0 0 1rem 0'
         }}>
           ${product.price}
@@ -60,18 +52,11 @@ const ProductCard = ({ product }) => {
       </Link>
       <button
         onClick={handleAddToCart}
+        className="btn-primary"
         style={{
           width: '100%',
-          padding: '0.75rem',
-          backgroundColor: '#007bff',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          cursor: 'pointer',
           fontSize: '1rem'
         }}
-        onMouseEnter={(e) => e.target.style.backgroundColor = '#0056b3'}
-        onMouseLeave={(e) => e.target.style.backgroundColor = '#007bff'}
       >
         Add to Cart
       </button>
