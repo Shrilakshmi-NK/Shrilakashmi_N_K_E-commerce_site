@@ -93,6 +93,12 @@ The frontend will be available at `http://localhost:5173` and the backend API at
 - `GET /api/products` - Get all products
 - `GET /api/products/:id` - Get product by ID
 
+## Documentation
+
+- [Technical Architecture](docs/technical-architecture.md) - Detailed system architecture and design decisions
+- [Codebase Overview](docs/codebase-overview.md) - Complete code structure and implementation details
+- [Development Prompts](docs/prompts-used.md) - Prompts used for code generation and documentation
+
 ## Contributing
 
 1. Fork the repository
