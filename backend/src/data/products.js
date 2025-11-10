@@ -1,6 +1,5 @@
 export const products = [
   {
-    _id: "1",
     name: "Wireless Headphones",
     description: "High-quality wireless headphones with noise cancellation",
     price: 99.99,
@@ -9,8 +8,7 @@ export const products = [
     inStock: true,
     stockQuantity: 50
   },
-  {
-    _id: "2", 
+  { 
     name: "Smart Watch",
     description: "Feature-rich smartwatch with health tracking",
     price: 199.99,
@@ -20,7 +18,6 @@ export const products = [
     stockQuantity: 30
   },
   {
-    _id: "3",
     name: "Running Shoes",
     description: "Comfortable running shoes for daily workouts",
     price: 79.99,
@@ -30,7 +27,6 @@ export const products = [
     stockQuantity: 25
   },
   {
-    _id: "4",
     name: "Coffee Maker",
     description: "Automatic coffee maker with programmable settings",
     price: 129.99,
@@ -40,7 +36,6 @@ export const products = [
     stockQuantity: 15
   },
   {
-    _id: "5",
     name: "Backpack",
     description: "Durable backpack perfect for travel and work",
     price: 49.99,
@@ -50,7 +45,6 @@ export const products = [
     stockQuantity: 40
   },
   {
-    _id: "6",
     name: "Desk Lamp",
     description: "Modern LED desk lamp with adjustable brightness",
     price: 39.99,

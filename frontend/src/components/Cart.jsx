@@ -5,19 +5,29 @@ import { useCart } from '../context/CartContext';
 const Cart = () => {
   const { items, totalItems, totalPrice, updateQuantity, removeFromCart, clearCart } = useCart();
 
+  const handleCheckout = () => {
+    alert(`Thank you for your purchase!\n\nOrder Summary:\n${items.length} items\nTotal: $${totalPrice.toFixed(2)}\n\nThis is a demo - no actual payment processed.`);
+    clearCart();
+  };
+
   if (items.length === 0) {
     return (
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h2>Your Cart is Empty</h2>
-        <p>Add some products to get started!</p>
-        <Link to="/" style={{
+      <div style={{ 
+        padding: '4rem 2rem', 
+        textAlign: 'center',
+        maxWidth: '600px',
+        margin: '0 auto'
+      }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
+          Your Cart is Empty
+        </h2>
+        <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+          Add some products to get started!
+        </p>
+        <Link to="/" className="btn-primary" style={{
           display: 'inline-block',
-          padding: '1rem 2rem',
-          backgroundColor: '#007bff',
-          color: 'white',
           textDecoration: 'none',
-          borderRadius: '4px',
-          marginTop: '1rem'
+          fontSize: '1.1rem'
         }}>
           Continue Shopping
         </Link>
@@ -26,19 +36,12 @@ const Cart = () => {
   }
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+    <div style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto', width: '100%' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <h2>Shopping Cart ({totalItems} items)</h2>
         <button
           onClick={clearCart}
-          style={{
-            padding: '0.5rem 1rem',
-            backgroundColor: '#dc3545',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer'
-          }}
+          className="btn-danger"
         >
           Clear Cart
         </button>
@@ -109,14 +112,8 @@ const Cart = () => {
               
               <button
                 onClick={() => removeFromCart(item.product._id)}
-                style={{
-                  padding: '0.5rem',
-                  backgroundColor: '#dc3545',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '4px',
-                  cursor: 'pointer'
-                }}
+                className="btn-danger"
+                style={{ padding: '0.5rem' }}
               >
                 Remove
               </button>
@@ -137,22 +134,23 @@ const Cart = () => {
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
           <Link to="/" style={{
             padding: '1rem 2rem',
-            backgroundColor: '#6c757d',
+            backgroundColor: 'var(--text-secondary)',
             color: 'white',
             textDecoration: 'none',
-            borderRadius: '4px'
+            borderRadius: '8px',
+            fontWeight: '500'
           }}>
             Continue Shopping
           </Link>
-          <button style={{
-            padding: '1rem 2rem',
-            backgroundColor: '#28a745',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '1rem'
-          }}>
+          <button 
+            onClick={handleCheckout}
+            className="btn-secondary"
+            style={{
+              padding: '1rem 2rem',
+              fontSize: '1rem',
+              fontWeight: '600'
+            }}
+          >
             Checkout
           </button>
         </div>

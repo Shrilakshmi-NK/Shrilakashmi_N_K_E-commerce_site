@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import connectDB from './src/config/database.js';
+import { seedProducts } from './src/utils/seedData.js';
 import productRoutes from './src/routes/products.js';
 
 // Load environment variables
@@ -8,6 +10,18 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Connect to MongoDB and seed data
+const initializeDatabase = async () => {
+  try {
+    const connection = await connectDB();
+    if (connection) {
+      await seedProducts();
+    }
+  } catch (error) {
+    console.log('Database initialization failed, continuing with sample data');
+  }
+};
 
 // Middleware
 app.use(cors({
@@ -50,4 +64,9 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV}`);
+  
+  // Initialize database connection and seed data (non-blocking)
+  initializeDatabase().catch(err => {
+    console.log('Database initialization failed, using sample data');
+  });
 });
