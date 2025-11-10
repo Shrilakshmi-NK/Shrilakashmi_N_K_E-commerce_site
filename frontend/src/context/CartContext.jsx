@@ -56,6 +56,7 @@ export const CartProvider = ({ children }) => {
   }, [state.items]);
 
   const addToCart = (product) => {
+    console.log('Adding to cart:', product);
     dispatch({ type: 'ADD_TO_CART', payload: product });
   };
 

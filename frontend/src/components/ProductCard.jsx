@@ -7,7 +7,10 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    console.log('Button clicked, adding product:', product);
     addToCart(product);
+    alert(`${product.name} added to cart!`);
   };
 
   return (

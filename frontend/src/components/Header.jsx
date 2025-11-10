@@ -1,31 +1,79 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 const Header = () => {
   const { totalItems } = useCart();
+  const { user, logout } = useAuth();
+  const location = useLocation();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error('Failed to log out:', error);
+    }
+  };
 
   return (
     <header style={{ 
-      padding: '1rem', 
+      padding: '1rem 2rem', 
       backgroundColor: '#333', 
       color: 'white',
       display: 'flex',
       justifyContent: 'space-between',
-      alignItems: 'center'
+      alignItems: 'center',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
     }}>
       <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
-        <h1>E-Commerce Store</h1>
+        <h1 style={{ fontSize: '1.8rem' }}>E-Commerce Store</h1>
       </Link>
-      <Link to="/cart" style={{ 
-        color: 'white', 
-        textDecoration: 'none',
-        padding: '0.5rem 1rem',
-        backgroundColor: '#555',
-        borderRadius: '4px'
-      }}>
-        Cart ({totalItems})
-      </Link>
+      
+      {user && location.pathname !== '/login' && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <img 
+              src={user.photoURL} 
+              alt={user.displayName}
+              style={{ 
+                width: '32px', 
+                height: '32px', 
+                borderRadius: '50%',
+                border: '2px solid white'
+              }}
+            />
+            <span style={{ fontSize: '0.9rem' }}>Hi, {user.displayName}</span>
+          </div>
+          
+          <Link to="/cart" style={{ 
+            color: 'white', 
+            textDecoration: 'none',
+            padding: '0.5rem 1rem',
+            backgroundColor: '#007bff',
+            borderRadius: '6px',
+            fontWeight: '500',
+            transition: 'background-color 0.2s'
+          }}>
+            Cart ({totalItems})
+          </Link>
+          
+          <button
+            onClick={handleLogout}
+            style={{
+              padding: '0.5rem 1rem',
+              backgroundColor: '#dc3545',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: '500'
+            }}
+          >
+            Logout
+          </button>
+        </div>
+      )}
     </header>
   );
 };
