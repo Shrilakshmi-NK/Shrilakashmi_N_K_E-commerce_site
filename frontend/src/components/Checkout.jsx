@@ -43,7 +43,7 @@ const Checkout = () => {
   }
 
   return (
-    <div style={{ padding: '2rem' }}>
+    <div style={{ padding: '2rem', width: '100%' }}>
       <h1 style={{ marginBottom: '2rem', textAlign: 'center' }}>Checkout</h1>
       
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>

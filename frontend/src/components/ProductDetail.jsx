@@ -31,7 +31,7 @@ const ProductDetail = () => {
   if (!product) return <div style={{ textAlign: 'center', padding: '2rem' }}>Product not found</div>;
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
+    <div style={{ padding: '2rem', width: '100%' }}>
       <Link to="/" style={{ color: '#007bff', textDecoration: 'none', marginBottom: '1rem', display: 'inline-block' }}>
         ← Back to Products
       </Link>

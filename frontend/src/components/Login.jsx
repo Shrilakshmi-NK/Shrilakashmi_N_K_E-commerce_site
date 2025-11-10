@@ -24,7 +24,8 @@ const Login = () => {
       alignItems: 'center',
       justifyContent: 'center',
       minHeight: '80vh',
-      padding: '2rem'
+      padding: '2rem',
+      width: '100%'
     }}>
       <div style={{
         backgroundColor: 'white',
@@ -32,8 +33,8 @@ const Login = () => {
         borderRadius: '12px',
         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
         textAlign: 'center',
-        maxWidth: '400px',
-        width: '100%'
+        maxWidth: '500px',
+        width: '90%'
       }}>
         <h1 style={{ marginBottom: '1rem', color: '#333' }}>Welcome to E-Commerce Store</h1>
         <p style={{ marginBottom: '2rem', color: '#666' }}>
