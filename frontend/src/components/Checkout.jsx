@@ -20,8 +20,7 @@ const Checkout = () => {
     return (
       <div style={{ 
         padding: '4rem 2rem', 
-        textAlign: 'center',
-        width: '100%'
+        textAlign: 'center'
       }}>
         <div style={{
           backgroundColor: 'var(--card-bg)',
@@ -44,7 +43,7 @@ const Checkout = () => {
   }
 
   return (
-    <div style={{ padding: '2rem', width: '100%' }}>
+    <div style={{ padding: '2rem' }}>
       <h1 style={{ marginBottom: '2rem', textAlign: 'center' }}>Checkout</h1>
       
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>

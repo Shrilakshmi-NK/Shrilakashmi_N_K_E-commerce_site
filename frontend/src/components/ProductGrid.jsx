@@ -31,9 +31,8 @@ const ProductGrid = () => {
       <h2 style={{ marginBottom: '2rem', textAlign: 'center', fontSize: '2rem' }}>Our Products</h2>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-        gap: '2rem',
-        padding: '0 1rem'
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: '2rem'
       }}>
         {products.map(product => (
           <ProductCard key={product._id} product={product} />

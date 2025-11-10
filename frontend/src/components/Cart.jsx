@@ -14,9 +14,7 @@ const Cart = () => {
     return (
       <div style={{ 
         padding: '4rem 2rem', 
-        textAlign: 'center',
-        maxWidth: '600px',
-        margin: '0 auto'
+        textAlign: 'center'
       }}>
         <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
           Your Cart is Empty
