@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import productRoutes from './src/routes/products.js';
 
 // Load environment variables
 dotenv.config();
@@ -14,6 +15,9 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+
+// Routes
+app.use('/api/products', productRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
