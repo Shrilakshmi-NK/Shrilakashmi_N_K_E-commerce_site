@@ -6,6 +6,7 @@ import Header from './components/Header';
 import ProductGrid from './components/ProductGrid';
 import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
@@ -33,6 +34,11 @@ function App() {
                 <Route path="/cart" element={
                   <ProtectedRoute>
                     <Cart />
+                  </ProtectedRoute>
+                } />
+                <Route path="/checkout" element={
+                  <ProtectedRoute>
+                    <Checkout />
                   </ProtectedRoute>
                 } />
               </Routes>

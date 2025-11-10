@@ -142,17 +142,19 @@ const Cart = () => {
           }}>
             Continue Shopping
           </Link>
-          <button 
-            onClick={handleCheckout}
+          <Link 
+            to="/checkout"
             className="btn-secondary"
             style={{
               padding: '1rem 2rem',
               fontSize: '1rem',
-              fontWeight: '600'
+              fontWeight: '600',
+              textDecoration: 'none',
+              display: 'inline-block'
             }}
           >
             Checkout
-          </button>
+          </Link>
         </div>
       </div>
     </div>
