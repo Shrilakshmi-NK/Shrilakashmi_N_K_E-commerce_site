@@ -87,17 +87,41 @@
     - Add loading states and error handling for cart operations
     - _Requirements: 3.1, 3.2, 3.3, 6.2_
 
-- [ ] 5. Implement API integration and data fetching
-  - [x] 5.1 Create API service layer
+- [x] 5. Implement authentication system
+  - [x] 5.1 Set up Google Authentication with Firebase
+
+    - Install and configure Firebase SDK for authentication
+    - Create Firebase configuration and Google OAuth provider setup
+    - Implement AuthContext with user state management
+    - Create mock authentication for demo purposes
+    - _Requirements: 7.1, 7.2, 7.3_
+
+  - [x] 5.2 Create authentication UI components
+
+    - Implement Login component with Google sign-in button
+    - Create ProtectedRoute component for route protection
+    - Update Header component to show user profile and logout option
+    - Add authentication state loading and error handling
+    - _Requirements: 7.1, 7.2, 7.4, 7.5_
+
+  - [x] 5.3 Integrate authentication with app routing
+
+    - Protect all main routes (home, product detail, cart) with authentication
+    - Implement automatic redirect to login for unauthenticated users
+    - Add user session persistence across browser sessions
+    - Connect cart functionality with authenticated user state
+    - _Requirements: 7.1, 7.2, 7.5_
+
+- [x] 6. Implement API integration and data fetching
+  - [x] 6.1 Create API service layer
 
     - Implement API service functions using Axios for HTTP requests
     - Create functions for fetching products list and individual product details
     - Add proper error handling and request timeout configuration
     - Implement retry logic for failed network requests
-    - _Requirements: 6.1, 6.4, 7.1_
+    - _Requirements: 6.1, 6.4, 8.1_
 
-  - [x] 5.2 Connect frontend components to backend API
-
+  - [x] 6.2 Connect frontend components to backend API
 
     - Integrate ProductGrid component with products API endpoint
     - Connect ProductDetail component to product details API
@@ -105,7 +129,7 @@
     - Add pagination or infinite scroll for product listing
     - _Requirements: 1.1, 1.2, 2.1, 6.1, 6.3_
 
-- [ ] 6. Add responsive design and mobile optimization
+- [ ] 7. Add responsive design and mobile optimization
   - [ ] 6.1 Implement responsive CSS for all components
     - Create responsive styles for ProductGrid using CSS Grid and Flexbox
     - Optimize Header component for mobile with hamburger menu if needed
@@ -120,7 +144,7 @@
     - Test cart functionality on mobile devices
     - _Requirements: 5.4, 4.3, 4.4_
 
-- [ ] 7. Implement error handling and loading states
+- [ ] 8. Implement error handling and loading states
   - [ ] 7.1 Add comprehensive error handling
     - Implement error boundaries for React components
     - Create user-friendly error messages for network failures
@@ -135,7 +159,7 @@
     - Add performance monitoring for page load times
     - _Requirements: 6.1, 6.2, 6.3_
 
-- [ ] 8. Write comprehensive tests
+- [ ] 9. Write comprehensive tests
   - [ ] 8.1 Create frontend unit and integration tests
     - Write unit tests for cart state management logic using Jest
     - Create component tests for ProductCard, ProductDetail, and Cart components
@@ -150,7 +174,7 @@
     - Test error scenarios and edge cases
     - _Requirements: 7.1, 7.2, 7.3, 7.4_
 
-- [ ] 9. Final integration and deployment preparation
+- [ ] 10. Final integration and deployment preparation
   - [ ] 9.1 Complete end-to-end integration testing
     - Test complete user workflows from product browsing to cart management
     - Verify responsive design across different devices and browsers

@@ -75,6 +75,18 @@ This document outlines the requirements for an E-Commerce Website that enables u
 
 ### Requirement 7
 
+**User Story:** As a customer, I want to securely sign in to the website, so that I can have a personalized shopping experience and secure access to my cart.
+
+#### Acceptance Criteria
+
+1. WHEN a user visits the website without being authenticated THEN the system SHALL redirect them to a login page
+2. WHEN a user clicks "Sign in with Google" THEN the system SHALL authenticate them using Google OAuth and create a user session
+3. WHEN a user is authenticated THEN the system SHALL display their profile information in the header
+4. WHEN a user wants to sign out THEN the system SHALL provide a logout option that clears their session
+5. WHEN a user is signed in THEN the system SHALL associate their cart with their user account
+
+### Requirement 8
+
 **User Story:** As a system administrator, I want reliable data storage and retrieval, so that product and cart information is consistently available.
 
 #### Acceptance Criteria
